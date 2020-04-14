@@ -26,7 +26,7 @@ def calculate options
 
     effective_period = counter.to_f * div_period
     effective_frequency = 1.0 / effective_period
-    error = 100.0 * (options[:target_frequency] - effective_frequency) / options[:target_frequency];
+    error = 100.0 * (effective_frequency - options[:target_frequency]) / options[:target_frequency];
     next if error.abs > options[:max_error]
 
     results << {
